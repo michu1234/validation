@@ -167,7 +167,7 @@ main {
   height: 50px;
   margin-right: 10px;
   cursor: pointer;
-}
+} 
 
 //  6. Modifier 
 
