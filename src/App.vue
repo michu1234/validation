@@ -70,6 +70,8 @@ Table of contents
 // 1. Variables
 $background_color: #ebf2f2;
 
+$divider_color: #DBE1E0;
+
 $faded_bluish_color: #77b8bc;
 $faded_gray_color: #b4b5b4;
 
@@ -78,10 +80,12 @@ $btn_font_color: #929192;
 
 $font_color: #363b44;
 $font_login: #929192;
+$font_light: #B4B4B4;
 
 $input_active: #6cbeea;
 $input_error: #ea3839;
 $input_correct: #89c869;
+$input_placeholder: #AEAFAE;
 
 // 2. Font Faces
 
@@ -89,6 +93,11 @@ $input_correct: #89c869;
 // 3. Base
 #app {
 }
+
+* {
+   box-sizing: border-box;
+}
+
   html, body {
     background-color: $background_color;
     font-size: 62.5%;
@@ -121,6 +130,29 @@ a:hover {
 
 a:active {
 
+}
+
+hr {
+  border: 1px solid $divider_color;
+  max-width: 930px;
+  margin: 30px 0 0 0;
+}
+
+input[type="text"]{
+  height: 59px;
+  color: $input_placeholder;
+  font-size: 1.8rem;
+  padding-left: 2rem;
+  border: 1px solid $input_active;
+}
+
+::placeholder {
+   color: $input_placeholder;
+}
+
+i {
+  cursor: pointer;
+  margin: 0 4px 0 4px;
 }
 
 // 4. Layout 
@@ -164,9 +196,10 @@ main {
   display: inline-block;
   font-size: 2rem;
   line-height: 2rem;
-  height: 50px;
+  height: 59px;
   margin-right: 10px;
   cursor: pointer;
+  vertical-align: top;
 } 
 
 //  6. Modifier 
@@ -186,12 +219,10 @@ main {
 
 .btn--wide {
   width: 260px;
-  height: 50px;
 }
 
 .btn--small {
   width: 130px;
-  height: 50px;
 }
 
 .btn--outline {
@@ -204,6 +235,19 @@ main {
   background: $btn_color;
   color: #ffffff;
   border: none;
+}
+
+.input--long {
+  width: 590px;
+}
+
+.aside--text {
+  color: $font_light;
+  font-size: 2.8rem;
+}
+
+.faded--text {
+  color: $faded_bluish_color;
 }
 
 // 8. Animations
