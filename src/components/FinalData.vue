@@ -1,39 +1,26 @@
 <template>
   <div id='finalData'>
-<table>
-    <thead>
-<tr><td>Key</td><td>Value</td></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td v-for="" :key="index"></td>
-        </tr>
-        <tr>
-            <td v-for="" :key="index"></td>
-        </tr>
-
-    </tbody>
-</table>
-
+    <h2>
+      User Data:
+    </h2>
+    <ul>
+      <li v-for="(d, index) in returnKeys" :key="index">
+        <h3>
+          {{d}}
+        </h3>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-
-import {mapState} from 'vuex'
+  import {mapGetters} from "vuex";
 
   export default {
-    name: 'FinalData',
-    data() {
-      return {
-
-      }
+    name: "FinalData",
+    computed: {
+      ...mapGetters(["returnKeys"])
     }
-  }
+  };
 
 </script>
-
-<style scoped lang='scss'>
-
-
-</style>

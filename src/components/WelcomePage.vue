@@ -53,8 +53,7 @@
               lastname: this.lastname,
               password: this.password
             });
-            console.log(this.$store.state);
-            this.$emit("accepted", "email-input");
+            this.$emit("accepted", "final-data");
           }
       }
     },

@@ -1,9 +1,5 @@
 <template>
   <div id="App">
-    <button @click="comp1">1</button>
-    <button @click="comp2">2</button>
-    <button @click="comp3">3</button>
-    <button @click="comp4">4</button>
     <header>
       <img @click="comp1" class="app__logo" src="./assets/assembla.svg" alt="Assembla">
       <login-signup v-if="display"></login-signup>
@@ -29,6 +25,7 @@
   import WelcomePage from "./components/WelcomePage";
   import LoginSignup from "./components/LoginSignup";
   import QuestionBar from "./components/QuestionBar";
+  import FinalData from "./components/FinalData";
  
   export default {
     name: "App",
@@ -38,7 +35,8 @@
       "name-input": NameInput,
       "welcome-page": WelcomePage,
       "login-signup": LoginSignup,
-      "question-bar": QuestionBar
+      "question-bar": QuestionBar,
+      "final-data": FinalData
     },
     data() {
       return {
@@ -49,15 +47,6 @@
     methods: {
       comp1() {
         this.currentView = "email-input";
-      },
-      comp2() {
-        this.currentView = "domain-input";
-      },
-      comp3() {
-        this.currentView = "name-input";
-      },
-      comp4() {
-        this.currentView = "welcome-page";
       },
        nextComp(entry) {
       this.currentView = entry;
