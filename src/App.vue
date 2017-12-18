@@ -11,9 +11,9 @@
     </header>
     <main>
       <transition name="pop">
-        <keep-alive>
+      
           <component @accepted="nextComp($event)" :is="currentView"> </component>
-        </keep-alive>
+      
       </transition>
     </main>
     <footer>
@@ -29,7 +29,7 @@
   import WelcomePage from "./components/WelcomePage";
   import LoginSignup from "./components/LoginSignup";
   import QuestionBar from "./components/QuestionBar";
-
+ 
   export default {
     name: "App",
     components: {
@@ -106,7 +106,9 @@ Table of contents
 
   // 2. Font Faces
   // 3. Base
-  #app {}
+  #app {
+    width: 100%;
+  }
 
   * {
     box-sizing: border-box;
@@ -123,14 +125,18 @@ Table of contents
   }
 
   body {
-    //  overflow: hidden;
+    overflow-y: scroll;
+  }
+  
+  h1,
+  h2 {
+    font-family: "Source Sans Pro", sans-serif;
   }
 
   h2 {
     font-size: 3.5rem;
     font-weight: 700;
     margin: 0;
-    font-family: "Source Sans Pro", sans-serif;
   }
 
   h3 {
@@ -165,7 +171,8 @@ Table of contents
     margin-bottom: 20px;
   }
 
-  input[type="text"] {
+  input[type="text"],
+  input[type="password"] {
     height: 59px;
     color: $input_placeholder;
     font-size: 1.8rem;
@@ -182,6 +189,7 @@ Table of contents
     display: flex;
     flex-direction: column;
     margin-right: 2%;
+    max-width: 550px;
   }
 
   i {
@@ -344,7 +352,7 @@ Table of contents
   }
 
   .input--error {
-    border: 2px solid $input_error;
+    outline: 3px solid $input_error;
   }
 
   .faded--text {
@@ -360,12 +368,21 @@ Table of contents
     right: -50px;
   }
 
+  .fa-refresh {
+    color: $faded_gray_color;
+    font-size: 2rem;
+    margin-left: 40px;
+    margin-top: 18px;
+    position: absolute;
+    right: -50px;
+  }
+
   // 8. Animations
   .pop-enter,
   .pop-leave {
     opacity: 0;
-    transform: rotateY(180deg);
-    transform-origin: 23%;
+    // transform: rotateY(180deg);
+    // transform-origin: 23%;
   }
 
   .pop-enter-to,

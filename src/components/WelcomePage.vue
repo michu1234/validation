@@ -12,12 +12,12 @@
         <span>name</span> is how you will be known in Assembla.
       </p>
       <div class="input--wrapper">
-        <input class="input--short" type="text" placeholder="First name">
-        <input class="input--short" type="text" placeholder="Last name">
+        <input v-model="name" class="input--short" type="text" placeholder="First name">
+        <input v-model="lastname" class="input--short" type="text" placeholder="Last name">
       </div>
       <p class="welcomePage__helper">Password</p>
       <div class="input--wrapper">
-        <input class="input--password" type="text" placeholder="Password">
+        <input v-model="password" class="input--password" type="password" placeholder="Password">
       
       <i v-if="true" class="fa fa-check" aria-hidden="true"></i></div>
     </form>
@@ -26,7 +26,7 @@
     <p class="welcomePage__info">Your email address is
       <span>{{}}</span>Use this email address to log into Assembla.</p>
     <hr>
-    <button class="btn btn--full btn--wide">JOIN ORGANIZATION
+    <button @click="passValue" class="btn btn--full btn--wide">JOIN ORGANIZATION
       <i class="fa fa-arrow-right" aria-hidden="true"></i>
     </button>
 
@@ -39,8 +39,17 @@
     name: "WelcomePage",
     data() {
       return {
-        msg: ""
+        name: "",
+        lastname: "",
+        password: ""
       };
+    },
+    methods: {
+        passValue() {
+          if(this.name !== "" && this.lastname !== "" && this.password !== "") {
+            this.$emit("accepted", "email-input")
+          }
+      }
     }
   };
 

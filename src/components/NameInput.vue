@@ -11,7 +11,6 @@
       <div class="input--wrapper">
         <input v-model="organization" class="input--long" type="text" placeholder="Your Organization's name">
       </div>
-      <i v-if="true" class="fa fa-check" aria-hidden="true"></i>
     </form>
     <p class="text--aside">You can change this later</p>
     <hr>
