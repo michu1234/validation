@@ -12,7 +12,7 @@
     <main>
       <transition name="pop">
         <keep-alive>
-          <component :is="currentView"> </component>
+          <component @accepted="nextComp($event)" :is="currentView"> </component>
         </keep-alive>
       </transition>
     </main>
@@ -59,6 +59,9 @@
       comp4() {
         this.currentView = "welcome-page";
       },
+       nextComp(entry) {
+      this.currentView = entry;
+    }
     }
   };
 

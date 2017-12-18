@@ -5,7 +5,7 @@
 
 <form action="">
   <div class="input--wrapper">
-    <input class="input--long" type="text" placeholder="organization-domain">
+    <input @keyup="validate" v-model="domain" class="input--long" type="text" placeholder="organization-domain">
 
   <label class="input--helper">.assembla.com</label>  </div>
   <i v-if="true" class="fa fa-check" aria-hidden="true"></i>
@@ -13,7 +13,7 @@
 <p class="text--aside">Please use only letters, numbers and dashes. You CANNOT change this later.</p>
 <p v-if="true" class="text--error">Spaces are not allowed.</p>
 <hr>
-<button class="btn btn--full btn--wide">LET'S GET STARTED</button>
+<button @click="passValue" class="btn btn--full btn--wide">LET'S GET STARTED</button>
 
 </div>
 </template>
@@ -23,8 +23,20 @@ export default {
   name: "DomainInput",
   data() {
     return {
-      msg: ""
-    };
+      domain: "",
+      valid: false
+    }
+  },
+  methods: {
+      passValue() {
+        if (this.valid === true) {
+          this.$emit("accepted", "name-input")
+        }
+      },
+      validate() {
+    let re = /^[a-zA-Z0-9\-_]{0,40}$/;
+        this.valid = re.test(this.domain.toLowerCase());
+      }
   }
 };
 </script>

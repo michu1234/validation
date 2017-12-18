@@ -9,14 +9,13 @@
 
     <form action="">
       <div class="input--wrapper">
-        <input class="input--long" type="text" placeholder="Your Organization's name">
-        <label class="input--helper">.assembla.com</label>
+        <input v-model="organization" class="input--long" type="text" placeholder="Your Organization's name">
       </div>
       <i v-if="true" class="fa fa-check" aria-hidden="true"></i>
     </form>
     <p class="text--aside">You can change this later</p>
     <hr>
-    <button class="btn btn--full btn--wide">Next
+    <button @click="passValue" class="btn btn--full btn--wide">Next
       <i class="fa fa-arrow-right" aria-hidden="true"></i>
     </button>
 </div>
@@ -27,8 +26,15 @@
     name: "NameInput",
     data() {
       return {
-        msg: ""
+        organization: ""
       };
+    },
+    methods: {
+       passValue() {
+          if(this.organization !== "") {
+            this.$emit("accepted", "welcome-page")
+          }
+      }
     }
   };
 
