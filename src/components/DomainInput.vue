@@ -31,6 +31,7 @@ export default {
   methods: {
       passValue() {
         if (this.valid === true) {
+          this.$store.commit('updateDomain', this.domain);
           this.$emit("accepted", "name-input")
         }
       },

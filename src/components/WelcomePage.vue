@@ -48,7 +48,13 @@
     methods: {
         passValue() {
           if(this.name !== "" && this.lastname !== "" && this.password !== "") {
-            this.$emit("accepted", "email-input")
+            this.$store.commit('updateForm', {
+              name: this.name,
+              lastname: this.lastname,
+              password: this.password
+            });
+            console.log(this.$store.state);
+            this.$emit("accepted", "email-input");
           }
       }
     },

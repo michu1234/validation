@@ -19,35 +19,35 @@
 </template>
 
 <script>
-  import {
-    mapState
-  } from 'vuex'
+import { mapState } from "vuex";
 
-  export default {
-    name: "EmailInput",
-    data() {
-      return {
-        email: "",
-        valid: false,
-      };
-    },
-    methods: {
-      passValue() {
-        if (this.valid === true) {
-          this.$emit("accepted", "domain-input")
-        }
-      },
-      validate() {
-        let re =
-          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        this.valid = re.test(this.email.toLowerCase());
+export default {
+  name: "EmailInput",
+  data() {
+    return {
+      email: "",
+      valid: false
+    };
+  },
+  computed: mapState([
+    'test'
+  ]),
+  methods: {
+    passValue() {
+      if (this.valid === true) {
+        // update Store
+        this.$store.commit('updateEmail', this.email);
+        this.$emit("accepted", "domain-input");
       }
+    },
+    validate() {
+      let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      this.valid = re.test(this.email.toLowerCase());
     }
-  };
-
+  }
+};
 </script>
 
 <style scoped lang='scss'>
-
 
 </style>

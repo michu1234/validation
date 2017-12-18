@@ -31,6 +31,7 @@
     methods: {
        passValue() {
           if(this.organization !== "") {
+              this.$store.commit('updateOrganization', this.organization);
             this.$emit("accepted", "welcome-page")
           }
       }
