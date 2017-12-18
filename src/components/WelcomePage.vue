@@ -19,7 +19,7 @@
       <div class="input--wrapper">
         <input v-model="password" class="input--password" type="password" placeholder="Password">
       
-      <i v-if="true" class="fa fa-check" aria-hidden="true"></i></div>
+      <i v-if="valid" class="fa fa-check" aria-hidden="true"></i></div>
     </form>
     <p class="text--aside">Please use at least 8 characters.</p>
     <h3>Email address</h3>
@@ -41,7 +41,8 @@
       return {
         name: "",
         lastname: "",
-        password: ""
+        password: "",
+        valid: false
       };
     },
     methods: {
@@ -49,6 +50,15 @@
           if(this.name !== "" && this.lastname !== "" && this.password !== "") {
             this.$emit("accepted", "email-input")
           }
+      }
+    },
+    watch: {
+      password() {
+         if(this.password.length >= 8){
+           this.valid = true;
+         }else {
+           this.valid = false;
+         }
       }
     }
   };

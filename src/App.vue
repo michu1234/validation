@@ -5,7 +5,7 @@
     <button @click="comp3">3</button>
     <button @click="comp4">4</button>
     <header>
-      <img class="app__logo" src="./assets/assembla.svg" alt="Assembla">
+      <img @click="comp1" class="app__logo" src="./assets/assembla.svg" alt="Assembla">
       <login-signup v-if="display"></login-signup>
       <question-bar v-else></question-bar>
     </header>
@@ -235,6 +235,7 @@ Table of contents
   // 5. Block + element
   .app__logo {
     max-width: 160px;
+    cursor: pointer;
   }
 
   .emailInput__header {
