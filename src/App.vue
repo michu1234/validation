@@ -19,35 +19,31 @@
 </template>
 
 <script>
-
-import EmailInput from './components/EmailInput'
-import DomainINput from './components/DomainInput'
-import NameInput from './components/NameInput'
-import WelcomePage from './components/WelcomePage'
-import LoginSignup from './components/LoginSignup'
-import QuestionBar from './components/QuestionBar'
-
+import EmailInput from "./components/EmailInput";
+import DomainINput from "./components/DomainInput";
+import NameInput from "./components/NameInput";
+import WelcomePage from "./components/WelcomePage";
+import LoginSignup from "./components/LoginSignup";
+import QuestionBar from "./components/QuestionBar";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    "email-input": EmailInput,    
-    "domain-input": DomainINput,    
-    "name-input": NameInput,    
+    "email-input": EmailInput,
+    "domain-input": DomainINput,
+    "name-input": NameInput,
     "welcome-page": WelcomePage,
-    "login-signup": LoginSignup,    
+    "login-signup": LoginSignup,
     "question-bar": QuestionBar
   },
-  data () {
+  data() {
     return {
-      currentView: 'email-input',
+      currentView: "welcome-page",
       display: true
-    }
+    };
   },
-  methods: {
-  
-    }
-  }
+  methods: {}
+};
 </script>
 
 <style lang="scss">
@@ -70,7 +66,7 @@ Table of contents
 // 1. Variables
 $background_color: #ebf2f2;
 
-$divider_color: #DBE1E0;
+$divider_color: #dbe1e0;
 
 $faded_bluish_color: #77b8bc;
 $faded_gray_color: #b4b5b4;
@@ -80,35 +76,49 @@ $btn_font_color: #929192;
 
 $font_color: #363b44;
 $font_login: #929192;
-$font_light: #B4B4B4;
+$font_light: #b4b4b4;
 
 $input_active: #6cbeea;
 $input_error: #ea3839;
 $input_correct: #89c869;
-$input_placeholder: #AEAFAE;
+$input_placeholder: #aeafae;
 
 // 2. Font Faces
-
 
 // 3. Base
 #app {
 }
 
 * {
-   box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-  html, body {
-    background-color: $background_color;
-    font-size: 62.5%;
-    font-family: "Montserrat", sans-serif;
-    width: 100%;
-    height: 100vh;
-  }
+html,
+body {
+  background-color: $background_color;
+  font-size: 62.5%;
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  height: 100vh;
+  color: $font_color;
+}
 
-  p {
-    font-size: 1.8rem;
-  }
+h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 0;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+h3 {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+p {
+  font-size: 1.8rem;
+  margin: 5px 0 5px 0;
+}
 a {
   text-decoration: none;
   color: $faded_bluish_color;
@@ -117,37 +127,40 @@ a {
 }
 
 a:link {
-
 }
 
 a:visited {
-
 }
 
 a:hover {
-
 }
 
 a:active {
-
 }
 
 hr {
   border: 1px solid $divider_color;
-  max-width: 930px;
+  max-width: 800px;
   margin: 30px 0 0 0;
+  margin-bottom: 30px;
 }
 
-input[type="text"]{
+input[type="text"] {
   height: 59px;
   color: $input_placeholder;
   font-size: 1.8rem;
   padding-left: 2rem;
-  border: 1px solid $input_active;
+  border: 2px solid $input_active;
 }
 
 ::placeholder {
-   color: $input_placeholder;
+  color: $input_placeholder;
+}
+
+form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 i {
@@ -155,7 +168,7 @@ i {
   margin: 0 4px 0 4px;
 }
 
-// 4. Layout 
+// 4. Layout
 
 header {
   display: flex;
@@ -163,7 +176,7 @@ header {
 }
 
 main {
-  padding: 120px 0 0 40px;
+  padding: 50px 0 0 40px;
 }
 
 #LoginSignup {
@@ -178,7 +191,12 @@ main {
   left: 20px;
 }
 
-// 5. Block + element 
+#domainInput {
+  display: flex;
+  flex-direction: column;
+}
+
+// 5. Block + element
 
 .app__logo {
   max-width: 160px;
@@ -188,7 +206,8 @@ main {
   font-size: 3.4rem;
 }
 
-.emailinput__header, .emailinput__description {
+.emailinput__header,
+.emailinput__description {
   max-width: 555px;
 }
 
@@ -200,19 +219,19 @@ main {
   margin-right: 10px;
   cursor: pointer;
   vertical-align: top;
-} 
+}
 
-//  6. Modifier 
+//  6. Modifier
 
 .btn--login {
   color: $faded_gray_color;
   background: transparent;
   border: none;
-  transition: all .4s;
+  transition: all 0.4s;
   &:hover {
     outline: 1px solid $faded_bluish_color;
     color: $faded_bluish_color;
-    transition: all .4s;
+    transition: all 0.4s;
     box-shadow: 3px 5px 10px $faded_bluish_color;
   }
 }
@@ -238,28 +257,71 @@ main {
 }
 
 .input--long {
-  width: 590px;
+  flex: 0 1 590px;
 }
 
-.aside--text {
+.input--short {
+  flex-basis: 48%;
+}
+
+.input--helper {
+  margin-left: -180px;
+  margin-top: 18px;
+  font-size: 2rem;
+  right: 10px;
+  color: $input_active;
+}
+
+.text--aside {
   color: $font_light;
-  font-size: 2.8rem;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+.text--error {
+  color: $input_error;
+}
+
+.input--wrapper {
+   max-width: 590px;
+   display: flex;
+   justify-content: space-between;
+   position: relative;
+}
+
+.input--password {
+  flex: 0 1 590px;
+}
+
+.input--error {
+  border: 2px solid $input_error;
 }
 
 .faded--text {
   color: $faded_bluish_color;
 }
 
+.fa-check {
+  color: $input_correct;
+  font-size: 2rem;
+  margin-left: 40px;
+  margin-top: 18px;
+  position: absolute;
+  right: -50px;
+}
+
 // 8. Animations
 
-.pop-enter, .pop-leave-to {
+.pop-enter,
+.pop-leave-to {
   opacity: 0;
 }
-.pop-enter-to, .pop-leave {
+.pop-enter-to,
+.pop-leave {
   opacity: 1;
 }
-.pop-enter-active, .pop-leave-active {
-  transition: all .3s;
+.pop-enter-active,
+.pop-leave-active {
+  transition: all 0.3s;
 }
-
 </style>
