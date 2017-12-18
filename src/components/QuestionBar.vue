@@ -7,14 +7,5 @@
 <script>
 export default {
   name: "QuestionBar",
-  data() {
-    return {
-  
-    };
-  }
 };
 </script>
-
-<style scoped lang='scss'>
-
-</style>

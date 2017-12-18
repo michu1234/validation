@@ -1,7 +1,7 @@
 <template>
 <div id='domainInput'>
 <h2 class="domainInput__header">This is your place in the Web.</h2>
-<p class="domainInput__description">Your Organization's domain will be your home address.</p>
+<p class="domainInput__description">Your Organization's <span>domain</span> will be your home address.</p>
 
 <form action="">
   <div class="input--wrapper">
@@ -45,7 +45,3 @@ export default {
   }
 };
 </script>
-
-<style scoped lang='scss'>
-
-</style>

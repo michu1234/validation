@@ -32,6 +32,9 @@ export let store = new Vuex.Store({
           return state.userInfo[i];
         
       }
+    },
+    returnEmail(state) {
+      return state.userInfo[0].email;
     }
   },
   mutations: {

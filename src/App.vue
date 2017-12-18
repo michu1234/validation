@@ -2,8 +2,8 @@
   <div id="App">
     <header>
       <img @click="comp1" class="app__logo" src="./assets/assembla.svg" alt="Assembla">
-      <login-signup v-if="display"></login-signup>
-      <question-bar v-else></question-bar>
+      <login-signup v-show="display"></login-signup>
+      <question-bar style="display: block; position: absolute; top: 27px; right: 20px; text-align: right; pointer-events: none;" v-if="!display"></question-bar>
     </header>
     <main>
       <transition name="pop">
@@ -50,6 +50,7 @@
       },
        nextComp(entry) {
       this.currentView = entry;
+      this.display = false;
     }
     }
   };
@@ -184,6 +185,10 @@ Table of contents
   i {
     cursor: pointer;
     margin: 0 4px 0 4px;
+  }
+
+  span {
+    font-weight: 700;
   }
 
   // 4. Layout
@@ -404,6 +409,13 @@ Table of contents
       position: absolute;
       bottom: 10px;
       left: 20px;
+    }
+  }
+
+    @media screen and (max-width: 995px) {
+
+    #questionBar {
+      visibility: hidden;
     }
   }
 

@@ -9,11 +9,6 @@
 <script>
 export default {
   name: "LoginSignup",
-  data() {
-    return {
-      msg: ""
-    };
-  }
 };
 </script>
 

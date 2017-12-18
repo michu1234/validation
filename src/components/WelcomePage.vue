@@ -24,7 +24,7 @@
     <p class="text--aside">Please use at least 8 characters.</p>
     <h3>Email address</h3>
     <p class="welcomePage__info">Your email address is
-      <span>{{}}</span>Use this email address to log into Assembla.</p>
+      <span>{{returnEmail}}</span>. Use this email address to log into Assembla.</p>
     <hr>
     <button @click="passValue" class="btn btn--full btn--wide">JOIN ORGANIZATION
       <i class="fa fa-arrow-right" aria-hidden="true"></i>
@@ -35,6 +35,9 @@
 </template>
 
 <script>
+
+import {mapGetters} from 'vuex'
+
   export default {
     name: "WelcomePage",
     data() {
@@ -44,6 +47,11 @@
         password: "",
         valid: false
       };
+    },
+    computed: {
+      ...mapGetters([
+        'returnEmail'
+      ])
     },
     methods: {
         passValue() {
@@ -69,8 +77,3 @@
   };
 
 </script>
-
-<style scoped lang='scss'>
-
-
-</style>
