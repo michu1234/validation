@@ -1,7 +1,7 @@
 <template>
-  <div id='EmailInput'>
-    <h1 class="emailinput__header">Accelerate with real-time project management today.</h1>
-    <p class="emailinput__description">From tickets to cardwalls to planning & communication tools, Assembla makes online collaboration easy.</p>
+  <div id='emailInput'>
+    <h1 class="emailInput__header">Accelerate with real-time project management today.</h1>
+    <p class="emailInput__description">From tickets to cardwalls to planning & communication tools, Assembla makes online collaboration easy.</p>
     <div class="input--wrapper">
       <input class="input--long" type="text" placeholder="Your business email address">
       <button class="btn btn--full btn--wide">LET'S GET STARTED</button>

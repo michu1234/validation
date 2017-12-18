@@ -1,8 +1,8 @@
 <template>
-  <div id='NameInput'>
+  <div id='nameInput'>
 
-    <h2 class="domainInput__header">Let's give it a name.</h2>
-    <p class="domainInput__description">Your new
+    <h2 class="nameInput__header">Let's give it a name.</h2>
+    <p class="nameInput__description">Your new
       <span>Organization</span> needs a
       <span>name</span>
     </p>
@@ -10,7 +10,7 @@
     <form action="">
       <div class="input--wrapper">
         <input class="input--long" type="text" placeholder="Your Organization's name">
-        <label class="domainInput__helper">.assembla.com</label>
+        <label class="nameInput__helper">.assembla.com</label>
       </div>
       <i v-if="true" class="fa fa-check" aria-hidden="true"></i>
     </form>

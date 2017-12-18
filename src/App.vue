@@ -196,6 +196,13 @@ main {
   padding: 10px 0 0 50px;
 }
 
+#emailInput {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  max-width: 740px;
+}
+
 #LoginSignup {
   display: inline-block;
   margin-left: auto;
@@ -211,6 +218,11 @@ main {
 #domainInput {
   display: flex;
   flex-direction: column;
+  padding-top: 30px;
+}
+
+#nameInput {
+  padding-top: 30px;
 }
 
 // 5. Block + element
@@ -219,13 +231,14 @@ main {
   max-width: 160px;
 }
 
-.emailinput__header {
+.emailInput__header {
   font-size: 3.4rem;
+  max-width: 500px;
 }
 
-.emailinput__header,
-.emailinput__description {
-  max-width: 555px;
+.emailInput__description {
+  margin: 20px 0 40px 0;
+   max-width: 550px;
 }
 
 .btn {
@@ -236,6 +249,14 @@ main {
   margin-right: 10px;
   cursor: pointer;
   vertical-align: top;
+}
+
+.domainInput__description {
+  margin-top: 40px;
+}
+
+.nameInput__description {
+  margin-top: 50px;
 }
 
 .welcomePage__helper {
@@ -344,6 +365,7 @@ main {
 .pop-enter,
 .pop-leave-to {
   opacity: 0;
+  
 }
 .pop-enter-to,
 .pop-leave {
@@ -351,6 +373,6 @@ main {
 }
 .pop-enter-active,
 .pop-leave-active {
-  transition: all 0.6s;
+  transition: all 0.2s;
 }
 </style>
