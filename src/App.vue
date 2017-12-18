@@ -1,5 +1,9 @@
 <template>
   <div id="App">
+    <button @click="comp1">1</button>
+    <button @click="comp2">2</button>
+    <button @click="comp3">3</button>
+    <button @click="comp4">4</button>
     <header>
       <img class="app__logo" src="./assets/assembla.svg" alt="Assembla">
       <login-signup v-if="display"></login-signup>
@@ -38,11 +42,24 @@ export default {
   },
   data() {
     return {
-      currentView: "welcome-page",
+      currentView: "email-input",
       display: true
     };
   },
-  methods: {}
+  methods: {
+    comp1() {
+      this.currentView = "email-input";
+    },
+    comp2() {
+      this.currentView = "domain-input";
+    },
+    comp3() {
+      this.currentView = "name-input";
+    },
+    comp4() {
+      this.currentView = "welcome-page";
+    },
+  }
 };
 </script>
 
@@ -176,7 +193,7 @@ header {
 }
 
 main {
-  padding: 50px 0 0 40px;
+  padding: 10px 0 0 50px;
 }
 
 #LoginSignup {
@@ -219,6 +236,18 @@ main {
   margin-right: 10px;
   cursor: pointer;
   vertical-align: top;
+}
+
+.welcomePage__helper {
+  margin-top: 20px;
+}
+
+.welcomePage__helper:first-of-type {
+  margin-top: 50px;
+}
+
+.welcomePage__info {
+  color: $faded_gray_color;
 }
 
 //  6. Modifier
@@ -283,7 +312,7 @@ main {
 }
 
 .input--wrapper {
-   max-width: 590px;
+   max-width: 850px;
    display: flex;
    justify-content: space-between;
    position: relative;
@@ -322,6 +351,6 @@ main {
 }
 .pop-enter-active,
 .pop-leave-active {
-  transition: all 0.3s;
+  transition: all 0.6s;
 }
 </style>

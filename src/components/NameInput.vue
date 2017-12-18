@@ -8,8 +8,10 @@
     </p>
 
     <form action="">
-      <input class="input--long" type="text" placeholder="Your Organization's name">
-      <label class="domainInput__helper">.assembla.com</label>
+      <div class="input--wrapper">
+        <input class="input--long" type="text" placeholder="Your Organization's name">
+        <label class="domainInput__helper">.assembla.com</label>
+      </div>
       <i v-if="true" class="fa fa-check" aria-hidden="true"></i>
     </form>
     <p class="text--aside">You can change this later</p>

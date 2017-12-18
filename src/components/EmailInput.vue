@@ -2,8 +2,10 @@
   <div id='EmailInput'>
     <h1 class="emailinput__header">Accelerate with real-time project management today.</h1>
     <p class="emailinput__description">From tickets to cardwalls to planning & communication tools, Assembla makes online collaboration easy.</p>
-    <input class="input--long" type="text" placeholder="Your business email address">
-    <button class="btn btn--full btn--wide">LET'S GET STARTED</button>
+    <div class="input--wrapper">
+      <input class="input--long" type="text" placeholder="Your business email address">
+      <button class="btn btn--full btn--wide">LET'S GET STARTED</button>
+    </div>
     <hr>
     <p class="aside--text"><em>or signup using: </em>
       <span class="faded--text">

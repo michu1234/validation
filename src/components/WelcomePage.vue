@@ -8,14 +8,14 @@
     </p>
 
     <form action="">
-      <p>Your
+      <p class="welcomePage__helper">Your
         <span>name</span> is how you will be known in Assembla.
       </p>
       <div class="input--wrapper">
         <input class="input--short" type="text" placeholder="First name">
         <input class="input--short" type="text" placeholder="Last name">
       </div>
-      <p>Password</p>
+      <p class="welcomePage__helper">Password</p>
       <div class="input--wrapper">
         <input class="input--password" type="text" placeholder="Password">
       
@@ -23,7 +23,7 @@
     </form>
     <p class="text--aside">Please use at least 8 characters.</p>
     <h3>Email address</h3>
-    <p>Your email address is
+    <p class="welcomePage__info">Your email address is
       <span>{{}}</span>Use this email address to log into Assembla.</p>
     <hr>
     <button class="btn btn--full btn--wide">JOIN ORGANIZATION

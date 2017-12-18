@@ -4,8 +4,10 @@
 <p class="domainInput__description">Your Organization's domain will be your home address.</p>
 
 <form action="">
-  <input class="input--long" type="text" placeholder="organization-domain">
-  <label class="domainInput__helper">.assembla.com</label>
+  <div class="input--wrapper">
+    <input class="input--long" type="text" placeholder="organization-domain">
+
+  <label class="domainInput__helper">.assembla.com</label>  </div>
   <i v-if="true" class="fa fa-check" aria-hidden="true"></i>
 </form>
 <p class="text--aside">Please use only letters, numbers and dashes. You CANNOT change this later.</p>
