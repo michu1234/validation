@@ -9,62 +9,63 @@
       <login-signup v-if="display"></login-signup>
       <question-bar v-else></question-bar>
     </header>
-<main>
-    <transition name="pop">
-  <keep-alive>
-    <component :is="currentView"> </component>
-  </keep-alive>
-</transition>
-</main>
-<footer>
-  <question-bar v-if="display"></question-bar>
-</footer>
+    <main>
+      <transition name="pop">
+        <keep-alive>
+          <component :is="currentView"> </component>
+        </keep-alive>
+      </transition>
+    </main>
+    <footer>
+      <question-bar v-if="display"></question-bar>
+    </footer>
   </div>
 </template>
 
 <script>
-import EmailInput from "./components/EmailInput";
-import DomainINput from "./components/DomainInput";
-import NameInput from "./components/NameInput";
-import WelcomePage from "./components/WelcomePage";
-import LoginSignup from "./components/LoginSignup";
-import QuestionBar from "./components/QuestionBar";
+  import EmailInput from "./components/EmailInput";
+  import DomainINput from "./components/DomainInput";
+  import NameInput from "./components/NameInput";
+  import WelcomePage from "./components/WelcomePage";
+  import LoginSignup from "./components/LoginSignup";
+  import QuestionBar from "./components/QuestionBar";
 
-export default {
-  name: "App",
-  components: {
-    "email-input": EmailInput,
-    "domain-input": DomainINput,
-    "name-input": NameInput,
-    "welcome-page": WelcomePage,
-    "login-signup": LoginSignup,
-    "question-bar": QuestionBar
-  },
-  data() {
-    return {
-      currentView: "email-input",
-      display: true
-    };
-  },
-  methods: {
-    comp1() {
-      this.currentView = "email-input";
+  export default {
+    name: "App",
+    components: {
+      "email-input": EmailInput,
+      "domain-input": DomainINput,
+      "name-input": NameInput,
+      "welcome-page": WelcomePage,
+      "login-signup": LoginSignup,
+      "question-bar": QuestionBar
     },
-    comp2() {
-      this.currentView = "domain-input";
+    data() {
+      return {
+        currentView: "email-input",
+        display: true
+      };
     },
-    comp3() {
-      this.currentView = "name-input";
-    },
-    comp4() {
-      this.currentView = "welcome-page";
-    },
-  }
-};
+    methods: {
+      comp1() {
+        this.currentView = "email-input";
+      },
+      comp2() {
+        this.currentView = "domain-input";
+      },
+      comp3() {
+        this.currentView = "name-input";
+      },
+      comp4() {
+        this.currentView = "welcome-page";
+      },
+    }
+  };
+
 </script>
 
 <style lang="scss">
-/* 
+  /* 
 Table of contents
 =====================
 // 1. Variables
@@ -80,299 +81,320 @@ Table of contents
 =====================
 */
 
-// 1. Variables
-$background_color: #ebf2f2;
+  // 1. Variables
+  $background_color: #ebf2f2;
 
-$divider_color: #dbe1e0;
+  $divider_color: #dbe1e0;
 
-$faded_bluish_color: #77b8bc;
-$faded_gray_color: #b4b5b4;
+  $faded_bluish_color: #77b8bc;
+  $faded_gray_color: #b4b5b4;
 
-$btn_color: #55bc7a;
-$btn_font_color: #929192;
+  $btn_color: #55bc7a;
+  $btn_font_color: #929192;
 
-$font_color: #363b44;
-$font_login: #929192;
-$font_light: #b4b4b4;
+  $font_color: #363b44;
+  $font_login: #929192;
+  $font_light: #b4b4b4;
 
-$input_active: #6cbeea;
-$input_error: #ea3839;
-$input_correct: #89c869;
-$input_placeholder: #aeafae;
+  $input_active: #6cbeea;
+  $input_error: #ea3839;
+  $input_correct: #89c869;
+  $input_placeholder: #aeafae;
 
-// 2. Font Faces
+  // 2. Font Faces
+  // 3. Base
+  #app {}
 
-// 3. Base
-#app {
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  background-color: $background_color;
-  font-size: 62.5%;
-  font-family: "Montserrat", sans-serif;
-  width: 100%;
-  height: 100vh;
-  color: $font_color;
-}
-
-h2 {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 0;
-  font-family: "Source Sans Pro", sans-serif;
-}
-
-h3 {
-  font-size: 2rem;
-  margin-bottom: 0;
-}
-
-p {
-  font-size: 1.8rem;
-  margin: 5px 0 5px 0;
-}
-a {
-  text-decoration: none;
-  color: $faded_bluish_color;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-a:link {
-}
-
-a:visited {
-}
-
-a:hover {
-}
-
-a:active {
-}
-
-hr {
-  border: 1px solid $divider_color;
-  max-width: 800px;
-  margin: 30px 0 0 0;
-  margin-bottom: 30px;
-}
-
-input[type="text"] {
-  height: 59px;
-  color: $input_placeholder;
-  font-size: 1.8rem;
-  padding-left: 2rem;
-  border: 2px solid $input_active;
-}
-
-::placeholder {
-  color: $input_placeholder;
-}
-
-form {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-i {
-  cursor: pointer;
-  margin: 0 4px 0 4px;
-}
-
-// 4. Layout
-
-header {
-  display: flex;
-  margin: 0 20px 0 20px;
-}
-
-main {
-  padding: 10px 0 0 50px;
-}
-
-#emailInput {
-  padding-top: 40px;
-  display: flex;
-  flex-direction: column;
-  max-width: 740px;
-}
-
-#LoginSignup {
-  display: inline-block;
-  margin-left: auto;
-  padding-top: 10px;
-}
-
-#QuestionBar {
-  position: absolute;
-  bottom: 10px;
-  left: 20px;
-}
-
-#domainInput {
-  display: flex;
-  flex-direction: column;
-  padding-top: 30px;
-}
-
-#nameInput {
-  padding-top: 30px;
-}
-
-// 5. Block + element
-
-.app__logo {
-  max-width: 160px;
-}
-
-.emailInput__header {
-  font-size: 3.4rem;
-  max-width: 500px;
-}
-
-.emailInput__description {
-  margin: 20px 0 40px 0;
-   max-width: 550px;
-}
-
-.btn {
-  display: inline-block;
-  font-size: 2rem;
-  line-height: 2rem;
-  height: 59px;
-  margin-right: 10px;
-  cursor: pointer;
-  vertical-align: top;
-}
-
-.domainInput__description {
-  margin-top: 40px;
-}
-
-.nameInput__description {
-  margin-top: 50px;
-}
-
-.welcomePage__helper {
-  margin-top: 20px;
-}
-
-.welcomePage__helper:first-of-type {
-  margin-top: 50px;
-}
-
-.welcomePage__info {
-  color: $faded_gray_color;
-}
-
-//  6. Modifier
-
-.btn--login {
-  color: $faded_gray_color;
-  background: transparent;
-  border: none;
-  transition: all 0.4s;
-  &:hover {
-    outline: 1px solid $faded_bluish_color;
-    color: $faded_bluish_color;
-    transition: all 0.4s;
-    box-shadow: 3px 5px 10px $faded_bluish_color;
+  * {
+    box-sizing: border-box;
   }
-}
 
-.btn--wide {
-  width: 260px;
-}
+  html,
+  body {
+    background-color: $background_color;
+    font-size: 62.5%;
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    height: 100vh;
+    color: $font_color;
+  }
 
-.btn--small {
-  width: 130px;
-}
+  body {
+    //  overflow: hidden;
+  }
 
-.btn--outline {
-  color: $faded_bluish_color;
-  background: $background_color;
-  border: 1px solid $faded_bluish_color;
-}
+  h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0;
+    font-family: "Source Sans Pro", sans-serif;
+  }
 
-.btn--full {
-  background: $btn_color;
-  color: #ffffff;
-  border: none;
-}
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
 
-.input--long {
-  flex: 0 1 590px;
-}
+  p {
+    font-size: 1.8rem;
+    margin: 5px 0 5px 0;
+  }
 
-.input--short {
-  flex-basis: 48%;
-}
+  a {
+    text-decoration: none;
+    color: $faded_bluish_color;
+    font-weight: bold;
+    cursor: pointer;
+  }
 
-.input--helper {
-  margin-left: -180px;
-  margin-top: 18px;
-  font-size: 2rem;
-  right: 10px;
-  color: $input_active;
-}
+  a:link {}
 
-.text--aside {
-  color: $font_light;
-  font-size: 1.5rem;
-  font-style: italic;
-}
+  a:visited {}
 
-.text--error {
-  color: $input_error;
-}
+  a:hover {}
 
-.input--wrapper {
-   max-width: 850px;
-   display: flex;
-   justify-content: space-between;
-   position: relative;
-}
+  a:active {}
 
-.input--password {
-  flex: 0 1 590px;
-}
+  hr {
+    border: 1px solid $divider_color;
+    max-width: 800px;
+    margin: 30px 2% 0 0;
+    margin-bottom: 20px;
+  }
 
-.input--error {
-  border: 2px solid $input_error;
-}
+  input[type="text"] {
+    height: 59px;
+    color: $input_placeholder;
+    font-size: 1.8rem;
+    padding-left: 2%;
+    border: 2px solid $input_active;
+  }
 
-.faded--text {
-  color: $faded_bluish_color;
-}
+  ::placeholder {
+    color: $input_placeholder;
+  }
 
-.fa-check {
-  color: $input_correct;
-  font-size: 2rem;
-  margin-left: 40px;
-  margin-top: 18px;
-  position: absolute;
-  right: -50px;
-}
+  form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-right: 2%;
+  }
 
-// 8. Animations
+  i {
+    cursor: pointer;
+    margin: 0 4px 0 4px;
+  }
 
-.pop-enter,
-.pop-leave-to {
-  opacity: 0;
-  
-}
-.pop-enter-to,
-.pop-leave {
-  opacity: 1;
-}
-.pop-enter-active,
-.pop-leave-active {
-  transition: all 0.2s;
-}
+  // 4. Layout
+  header {
+    display: flex;
+    margin: 0 20px 0 20px;
+  }
+
+  main {
+    padding: 10px 0 0 4%;
+  }
+
+  #emailInput {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    max-width: 740px;
+  }
+
+  #loginSignup {
+    display: none;
+  }
+
+  #questionBar {
+    display: none;
+  }
+
+  #domainInput {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+  }
+
+  #nameInput {
+    padding-top: 30px;
+  }
+
+  // 5. Block + element
+  .app__logo {
+    max-width: 160px;
+  }
+
+  .emailInput__header {
+    font-size: 3.4rem;
+    max-width: 500px;
+  }
+
+  .emailInput__description {
+    margin: 20px 0 40px 0;
+    max-width: 550px;
+  }
+
+  .btn {
+    display: inline-block;
+    font-size: 2rem;
+    line-height: 2rem;
+    height: 59px;
+    margin-right: 10px;
+    cursor: pointer;
+    vertical-align: top;
+  }
+
+  .domainInput__description {
+    margin: 40px 0 10px 0;
+  }
+
+  .nameInput__description {
+    margin-top: 50px;
+  }
+
+  .welcomePage__helper {
+    margin-top: 10px;
+  }
+
+  .welcomePage__helper:first-of-type {
+    margin-top: 40px;
+  }
+
+  .welcomePage__info {
+    color: $faded_gray_color;
+  }
+
+  //  6. Modifier
+  .btn--login {
+    color: $faded_gray_color;
+    background: transparent;
+    border: none;
+    transition: all 0.4s;
+    &:hover {
+      outline: 1px solid $faded_bluish_color;
+      color: $faded_bluish_color;
+      transition: all 0.4s;
+      box-shadow: 3px 5px 10px $faded_bluish_color;
+    }
+  }
+
+  .btn--wide {
+    width: 260px;
+  }
+
+  .btn--small {
+    width: 130px;
+  }
+
+  .btn--outline {
+    color: $faded_bluish_color;
+    background: $background_color;
+    border: 1px solid $faded_bluish_color;
+  }
+
+  .btn--full {
+    background: $btn_color;
+    color: #ffffff;
+    border: none;
+  }
+
+  .input--long {
+    flex: 0 1 590px;
+  }
+
+  .input--short {
+    flex-basis: 48%;
+  }
+
+  .input--helper {
+    margin-left: -180px;
+    margin-top: 18px;
+    font-size: 1.9rem;
+    right: 10px;
+    color: $input_active;
+  }
+
+  .text--aside {
+    color: $font_light;
+    font-size: 1.9rem;
+    font-style: italic;
+    margin-top: 14px;
+  }
+
+  .text--error {
+    color: $input_error;
+    margin-top: 26px;
+  }
+
+  .input--wrapper {
+    max-width: 550px;
+    margin-right: 8%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .input--password {
+    flex: 0 1 590px;
+  }
+
+  .input--error {
+    border: 2px solid $input_error;
+  }
+
+  .faded--text {
+    color: $faded_bluish_color;
+  }
+
+  .fa-check {
+    color: $input_correct;
+    font-size: 2rem;
+    margin-left: 40px;
+    margin-top: 18px;
+    position: absolute;
+    right: -50px;
+  }
+
+  // 8. Animations
+  .pop-enter,
+  .pop-leave {
+    opacity: 0;
+    transform: rotateY(180deg);
+    transform-origin: 23%;
+  }
+
+  .pop-enter-to,
+  .pop-leave-to {
+    opacity: 1;
+  }
+
+  .pop-enter-active,
+  .pop-leave-active {
+    transition: all 0.7s;
+  }
+
+
+
+
+
+
+  // 9. Media Queries 
+  @media screen and (min-width: 765px) {
+
+    #loginSignup {
+      display: inline-block;
+      margin-left: auto;
+      padding-top: 10px;
+    }
+
+    #questionBar {
+      display: block;
+      position: absolute;
+      bottom: 10px;
+      left: 20px;
+    }
+  }
+
 </style>

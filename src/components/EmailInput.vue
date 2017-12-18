@@ -7,7 +7,7 @@
       <button class="btn btn--full btn--wide">LET'S GET STARTED</button>
     </div>
     <hr>
-    <p class="aside--text"><em>or signup using: </em>
+    <p class="text--aside"><em>or signup using: </em>
       <span class="faded--text">
         <i class="fa fa-google" aria-hidden="true"></i>
         <i class="fa fa-github" aria-hidden="true"></i>

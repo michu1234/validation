@@ -10,7 +10,7 @@
     <form action="">
       <div class="input--wrapper">
         <input class="input--long" type="text" placeholder="Your Organization's name">
-        <label class="nameInput__helper">.assembla.com</label>
+        <label class="input--helper">.assembla.com</label>
       </div>
       <i v-if="true" class="fa fa-check" aria-hidden="true"></i>
     </form>
