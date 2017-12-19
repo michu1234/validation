@@ -3,11 +3,11 @@
     <h1 class="emailInput__header">Accelerate with real-time project management today.</h1>
     <p class="emailInput__description">From tickets to cardwalls to planning & communication tools, Assembla makes online collaboration easy.</p>
     <div class="input--wrapper">
-      <input @keyup="validate" v-model="email" class="input--long" type="text" placeholder="Your business email address">
+      <input @keypress.enter="passValue" @keyup="validate" v-model="email" class="input--long" type="text" placeholder="Your business email address">
       <button @click="passValue" class="btn btn--full btn--wide">LET'S GET STARTED</button>
     </div>
     <hr>
-    <p class="text--aside">
+    <p class="text--aside-small">
       <em>or signup using: </em>
       <span class="faded--text">
         <i class="fa fa-google" aria-hidden="true"></i>

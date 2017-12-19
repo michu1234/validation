@@ -11,7 +11,7 @@
   <i v-if="valid && domain !== ''" class="fa fa-check" aria-hidden="true"></i>
     <i @click="refresh" v-if="!valid && domain !== ''" class="fa fa-refresh" aria-hidden="true"></i>
 </form>
-<p class="text--aside">Please use only letters, numbers and dashes. You CANNOT change this later.</p>
+<p class="text--aside text--size">Please use only letters, numbers and dashes. You CANNOT change this later.</p>
 <p v-if="!valid && domain !== ''" class="text--error">Spaces are not allowed.</p>
 <hr>
 <button @click="passValue" class="btn btn--full btn--wide">LET'S GET STARTED</button>

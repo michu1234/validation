@@ -11,7 +11,7 @@
       <p class="welcomePage__helper">Your
         <span>name</span> is how you will be known in Assembla.
       </p>
-      <div class="input--wrapper">
+      <div class="input--wrapper input--wrapper-responsive">
         <input v-model="name" class="input--short" type="text" placeholder="First name">
         <input v-model="lastname" class="input--short" type="text" placeholder="Last name">
       </div>
@@ -23,7 +23,7 @@
     </form>
     <p class="text--aside">Please use at least 8 characters.</p>
     <h3>Email address</h3>
-    <p class="welcomePage__info">Your email address is
+    <p class="text--aside">Your email address is
       <span>{{returnEmail}}</span>. Use this email address to log into Assembla.</p>
     <hr>
     <button @click="passValue" class="btn btn--full btn--wide">JOIN ORGANIZATION

@@ -156,7 +156,7 @@ Table of contents
 
   hr {
     border: 1px solid $divider_color;
-    max-width: 800px;
+    max-width: 700px;
     margin: 30px 2% 0 0;
     margin-bottom: 20px;
   }
@@ -205,7 +205,7 @@ Table of contents
     padding-top: 40px;
     display: flex;
     flex-direction: column;
-    max-width: 740px;
+    max-width: 940px;
   }
 
   #loginSignup {
@@ -238,7 +238,7 @@ Table of contents
   }
 
   .emailInput__description {
-    margin: 20px 0 40px 0;
+    margin: 0 0 40px 0;
     max-width: 550px;
   }
 
@@ -247,7 +247,7 @@ Table of contents
     font-size: 2rem;
     line-height: 2rem;
     height: 59px;
-    margin-right: 10px;
+    margin: 0 10px 0 10px;
     cursor: pointer;
     vertical-align: top;
   }
@@ -323,10 +323,21 @@ Table of contents
   }
 
   .text--aside {
+    font-size: 1.4rem;
+    color: $font_light;
+    font-style: italic;
+    margin-top: 14px;
+  }
+
+  .text--aside-small {
     color: $font_light;
     font-size: 1.9rem;
     font-style: italic;
     margin-top: 14px;
+  }
+  
+  .text--size {
+    max-width: 550px;
   }
 
   .text--error {
@@ -335,7 +346,7 @@ Table of contents
   }
 
   .input--wrapper {
-    max-width: 550px;
+    max-width: 750px;
     margin-right: 8%;
     display: flex;
     justify-content: space-between;
@@ -360,7 +371,7 @@ Table of contents
     margin-left: 40px;
     margin-top: 18px;
     position: absolute;
-    right: -50px;
+    right: -40px;
   }
 
   .fa-refresh {
@@ -369,7 +380,7 @@ Table of contents
     margin-left: 40px;
     margin-top: 18px;
     position: absolute;
-    right: -50px;
+    right: -40px;
   }
 
   // 8. Animations
@@ -416,6 +427,15 @@ Table of contents
 
     #questionBar {
       visibility: hidden;
+    }
+  }
+
+  @media screen and (max-width: 700px){
+    .input--wrapper-responsive {
+      flex-direction: column;
+      & input {
+        margin-bottom: 10px;
+      }
     }
   }
 
