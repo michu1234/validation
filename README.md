@@ -1,4 +1,4 @@
-# glutenfreeapp
+# Validation
 
 > A Vue.js project
 
