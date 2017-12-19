@@ -1,4 +1,5 @@
 <template>
+
   <div id='emailInput'>
     <h1 class="emailInput__header">Accelerate with real-time project management today.</h1>
     <p class="emailInput__description">From tickets to cardwalls to planning & communication tools, Assembla makes online collaboration easy.</p>
@@ -16,9 +17,11 @@
       </span>
     </p>
   </div>
+
 </template>
 
 <script>
+
 import { mapState } from "vuex";
 
 export default {
@@ -46,4 +49,5 @@ export default {
     }
   }
 };
+
 </script>

@@ -1,4 +1,5 @@
 <template>
+
   <div id='finalData'>
     <h2>
       User Data:
@@ -11,9 +12,11 @@
       </li>
     </ul>
   </div>
+  
 </template>
 
 <script>
+
   import {mapGetters} from "vuex";
 
   export default {

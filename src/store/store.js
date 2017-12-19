@@ -28,9 +28,7 @@ export let store = new Vuex.Store({
   getters: {
     returnKeys(state) {
       for (let i = 0; i < state.userInfo.length; i++) {
-       
-          return state.userInfo[i];
-        
+        return state.userInfo[i];
       }
     },
     returnEmail(state) {

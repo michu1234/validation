@@ -1,21 +1,24 @@
 <template>
+
   <div id="App">
     <header>
       <img @click="comp1" class="app__logo" src="./assets/assembla.svg" alt="Assembla">
       <login-signup v-show="display"></login-signup>
-      <question-bar style="display: block; position: absolute; top: 27px; right: 20px; text-align: right; pointer-events: none;" v-if="!display"></question-bar>
+      <question-bar style="display: block; position: absolute; top: 27px; right: 20px; text-align: right; pointer-events: none;"
+        v-if="!display"></question-bar>
     </header>
     <main>
       <transition name="pop">
-      
-          <component @accepted="nextComp($event)" :is="currentView"> </component>
-      
+
+        <component @accepted="nextComp($event)" :is="currentView"> </component>
+
       </transition>
     </main>
     <footer>
       <question-bar v-if="display"></question-bar>
     </footer>
   </div>
+
 </template>
 
 <script>
@@ -26,7 +29,7 @@
   import LoginSignup from "./components/LoginSignup";
   import QuestionBar from "./components/QuestionBar";
   import FinalData from "./components/FinalData";
- 
+
   export default {
     name: "App",
     components: {
@@ -48,10 +51,10 @@
       comp1() {
         this.currentView = "email-input";
       },
-       nextComp(entry) {
-      this.currentView = entry;
-      this.display = false;
-    }
+      nextComp(entry) {
+        this.currentView = entry;
+        this.display = false;
+      }
     }
   };
 
@@ -92,9 +95,7 @@ Table of contents
   $input_active: #6cbeea;
   $input_error: #ea3839;
   $input_correct: #89c869;
-  $input_placeholder: #aeafae;
-
-  // 2. Font Faces
+  $input_placeholder: #aeafae; // 2. Font Faces
   // 3. Base
   #app {
     width: 100%;
@@ -117,7 +118,7 @@ Table of contents
   body {
     overflow-y: scroll;
   }
-  
+
   h1,
   h2 {
     font-family: "Source Sans Pro", sans-serif;
@@ -170,7 +171,7 @@ Table of contents
     border: 2px solid $input_active;
   }
 
-  ::placeholder {
+   ::placeholder {
     color: $input_placeholder;
   }
 
@@ -189,9 +190,7 @@ Table of contents
 
   span {
     font-weight: 700;
-  }
-
-  // 4. Layout
+  } // 4. Layout
   header {
     display: flex;
     margin: 0 20px 0 20px;
@@ -224,9 +223,7 @@ Table of contents
 
   #nameInput {
     padding-top: 30px;
-  }
-
-  // 5. Block + element
+  } // 5. Block + element
   .app__logo {
     max-width: 160px;
     cursor: pointer;
@@ -270,9 +267,7 @@ Table of contents
 
   .welcomePage__info {
     color: $faded_gray_color;
-  }
-
-  //  6. Modifier
+  } //  6. Modifier
   .btn--login {
     color: $faded_gray_color;
     background: transparent;
@@ -335,7 +330,7 @@ Table of contents
     font-style: italic;
     margin-top: 14px;
   }
-  
+
   .text--size {
     max-width: 550px;
   }
@@ -381,13 +376,10 @@ Table of contents
     margin-top: 18px;
     position: absolute;
     right: -40px;
-  }
-
-  // 8. Animations
+  } // 8. Animations
   .pop-enter,
   .pop-leave {
-    opacity: 0;
-    // transform: rotateY(180deg);
+    opacity: 0; // transform: rotateY(180deg);
     // transform-origin: 23%;
   }
 
@@ -399,14 +391,7 @@ Table of contents
   .pop-enter-active,
   .pop-leave-active {
     transition: all 0.7s;
-  }
-
-
-
-
-
-
-  // 9. Media Queries 
+  } // 9. Media Queries 
   @media screen and (min-width: 765px) {
 
     #loginSignup {
@@ -423,14 +408,14 @@ Table of contents
     }
   }
 
-    @media screen and (max-width: 995px) {
+  @media screen and (max-width: 995px) {
 
     #questionBar {
       visibility: hidden;
     }
   }
 
-  @media screen and (max-width: 700px){
+  @media screen and (max-width: 700px) {
     .input--wrapper-responsive {
       flex-direction: column;
       & input {

@@ -1,12 +1,10 @@
 <template>
+
   <div id='welcomePage'>
-
-
     <h2 class="welcomePage__header">Welcome!</h2>
     <p class="welcomePage__description">Create your username and password for the
       <span>ABC Company</span> organization.
     </p>
-
     <form action="">
       <p class="welcomePage__helper">Your
         <span>name</span> is how you will be known in Assembla.
@@ -29,9 +27,8 @@
     <button @click="passValue" class="btn btn--full btn--wide">JOIN ORGANIZATION
       <i class="fa fa-arrow-right" aria-hidden="true"></i>
     </button>
-
-
   </div>
+
 </template>
 
 <script>

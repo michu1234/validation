@@ -1,12 +1,11 @@
 <template>
-  <div id='nameInput'>
 
+  <div id='nameInput'>
     <h2 class="nameInput__header">Let's give it a name.</h2>
     <p class="nameInput__description">Your new
       <span>Organization</span> needs a
       <span>name</span>
     </p>
-
     <form action="">
       <div class="input--wrapper">
         <input v-model="organization" class="input--long" type="text" placeholder="Your Organization's name">
@@ -18,9 +17,11 @@
       <i class="fa fa-arrow-right" aria-hidden="true"></i>
     </button>
 </div>
+
 </template>
 
 <script>
+
   export default {
     name: "NameInput",
     data() {
