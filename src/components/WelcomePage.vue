@@ -52,7 +52,7 @@ import {mapGetters} from 'vuex'
     },
     methods: {
         passValue() {
-          if(this.name !== "" && this.lastname !== "" && this.password !== "") {
+          if(this.name !== "" && this.lastname !== "" && this.password !== "" && this.valid) {
             this.$store.commit('updateForm', {
               name: this.name,
               lastname: this.lastname,
