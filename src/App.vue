@@ -2,7 +2,7 @@
 
   <div id="App">
     <header>
-      <img @click="comp1" class="app__logo" src="./assets/assembla.svg" alt="Assembla">
+      <img @click="comp1" class="app__logo" :src="imgPath" alt="Assembla">
       <login-signup v-show="display"></login-signup>
       <question-bar style="display: block; position: absolute; top: 27px; right: 20px; text-align: right; pointer-events: none;"
         v-if="!display"></question-bar>
@@ -44,7 +44,8 @@
     data() {
       return {
         currentView: "email-input",
-        display: true
+        display: true,
+        imgPath: '../static/assembla.svg',
       };
     },
     methods: {
